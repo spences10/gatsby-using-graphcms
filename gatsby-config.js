@@ -1,5 +1,5 @@
 require('dotenv').config({
-  path: '.env.development'
+  path: '.env'
 })
 
 module.exports = {
@@ -14,7 +14,7 @@ module.exports = {
         endpoint: process.env.GRAPHCMS_ID,
         token: process.env.GRAPHCMS_TOKEN,
         query: `{
-          allArtists {
+          allCategories {
             id
             name
           }
