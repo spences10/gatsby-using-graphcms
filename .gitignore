@@ -6,3 +6,8 @@ yarn-error.log
 
 # Build directory
 /public
+
+# Env
+.env
+.env.development
+.env.production
