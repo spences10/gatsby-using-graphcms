@@ -24,7 +24,7 @@ const Header = props => (
           }}>
           Gatsby
         </Link>
-        <PageNav nav={props} />
+        <PageNav navItems={props.navItems} />
       </h1>
     </div>
   </div>

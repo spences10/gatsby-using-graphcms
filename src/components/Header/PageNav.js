@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 
-// import { media } from '../theme/globalStyle'
+import { media } from '../../theme/globalStyle'
 
 const NavMenu = styled.ul`
   grid-area: n;
@@ -18,7 +18,7 @@ const NavItem = styled.li`
   transition: all 0.3s;
   text-transform: uppercase;
   list-style: none;
-  color: ${props => props.theme.white};
+  color: ${props => props.theme.primary};
   &:hover {
     letter-spacing: 0.25rem;
     transition: all 0.3s;
@@ -27,7 +27,7 @@ const NavItem = styled.li`
 `
 
 const NavLink = styled(Link).attrs({
-  color: props => props.theme.secondary.yellow
+  color: props => props.theme.primary
 })`
   color: inherit;
   &:visited,
@@ -35,30 +35,46 @@ const NavLink = styled(Link).attrs({
     color: inherit;
   }
   &:hover {
-    color: ${props => props.color};
+    color: ${props => props.theme.danger};
   }
   &.activeLink {
-    color: ${props => props.theme.secondary.red};
+    color: ${props => props.theme.primary};
   }
 `
 
-const PageNav = ({ nav }) => {
-  return (
-    <NavMenu>
-      {console.log(nav)}
-      {Object.keys(nav).map((item, index) => (
-        <NavItem key={index}>
-          <NavLink to={`/${item}`} activeClassName="activeLink">
-            {item}
-          </NavLink>
-        </NavItem>
-      ))}
-    </NavMenu>
-  )
-}
+const PageNav = ({ navItems }) => (
+  <ul>
+    {navItems.map(item => {
+      const navItem = item.node || item
+      return (
+        <li>
+          {navItem.name}
+          {navItem.subNavItems && <Nav navItems={subNavItems} />}
+        </li>
+      )
+    })}
+  </ul>
+)
+// const PageNav = ({ nav }) => {
+//   const items = [...nav.navItems]
+//   return (
+//     <NavMenu>
+//       {console.log(items)}
+//       {Object.keys(nav.navItems).map(item => console.log(item))}
+//     </NavMenu>
+//   )
+// }
 
-PageNav.propTypes = {
-  nav: PropTypes.array.isRequired
-}
+// {Object.keys(nav).map((item, index) => (
+//   <NavItem key={index}>
+//     <NavLink to={`/${item}`} activeClassName="activeLink">
+//       {item}
+//     </NavLink>
+//   </NavItem>
+// ))}
+
+// PageNav.propTypes = {
+//   nav: PropTypes.array.isRequired
+// }
 
 export default PageNav
