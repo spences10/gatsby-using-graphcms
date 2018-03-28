@@ -7,6 +7,11 @@ import './index.css'
 
 const TemplateWrapper = ({ children, data }) => {
   const { edges: navItems } = data.allNavigationLinks
+
+  console.log('====================')
+  console.log(navItems)
+  console.log('====================')
+
   return (
     <div>
       <Helmet
@@ -16,7 +21,7 @@ const TemplateWrapper = ({ children, data }) => {
           { name: 'keywords', content: 'sample, something' }
         ]}
       />
-      <Header navItems={console.log(navItems)} />
+      <Header navItems={navItems} />
 
       <div
         style={{
