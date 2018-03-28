@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 
-import { media } from '../theme/globalStyle'
+// import { media } from '../theme/globalStyle'
 
 const NavMenu = styled.ul`
   grid-area: n;
@@ -12,50 +12,6 @@ const NavMenu = styled.ul`
   grid-column-gap: 10px;
   margin: 1.5rem 0.1rem 1.5rem 0.1rem;
   padding: 1.5rem 0.1rem 1.5rem 0.1rem;
-  ${media.giant`
-    grid-template-columns: repeat(5, auto);
-    margin: 1.5rem 0.1rem 1.5rem 0.1rem;
-    padding: 1.5rem 0.1rem 1.5rem 0.1rem;
-  `};
-  ${media.desktop`
-    grid-template-columns: repeat(5, auto);
-    margin: 1.5rem 0.1rem 1.5rem 0.1rem;
-    padding: 1.5rem 0.1rem 1.5rem 0.1rem;
-  `};
-  ${media.tablet`
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    position: relative;
-    list-style-type: none;
-    margin: 1rem 1rem 1rem 0.1rem;
-    padding: 1rem 1rem 1rem 0.1rem;
-    &.responsive > li {
-      display: block;
-      text-align: left;
-      padding: 0.5rem;
-      justify-self: end;
-      &:first-child {
-        padding: 0.8rem 0rem;
-      }
-    }
-  `};
-  ${media.phone`
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    position: relative;
-    list-style-type: none;
-    margin: 1rem 1rem 1rem 0.1rem;
-    padding: 1rem 1rem 1rem 0.1rem;
-    &.responsive > li {
-      display: block;
-      text-align: left;
-      padding: 0.5rem;
-      justify-self: end;
-      &:first-child {
-        padding: 0.8rem 0rem;
-      }
-    }
-  `};
 `
 
 const NavItem = styled.li`
@@ -89,7 +45,8 @@ const NavLink = styled(Link).attrs({
 const PageNav = ({ nav }) => {
   return (
     <NavMenu>
-      {nav.map((item, index) => (
+      {console.log(nav)}
+      {Object.keys(nav).map((item, index) => (
         <NavItem key={index}>
           <NavLink to={`/${item}`} activeClassName="activeLink">
             {item}
