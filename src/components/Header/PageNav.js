@@ -5,6 +5,8 @@ import styled from 'styled-components'
 
 import { media } from '../../theme/globalStyle'
 
+import { Dump } from '../../helpers'
+
 const NavMenu = styled.ul`
   grid-area: n;
   display: inline-grid;
@@ -43,17 +45,20 @@ const NavLink = styled(Link).attrs({
 `
 
 const PageNav = ({ navItems }) => (
-  <ul>
-    {navItems.map(item => {
+  <NavMenu>
+    <Dump navItems={navItems} />
+    {navItems.map((item, index) => {
       const navItem = item.node || item
       return (
-        <li>
-          {navItem.name}
-          {navItem.subNavItems && <Nav navItems={subNavItems} />}
-        </li>
+        <NavItem key={index}>
+          <NavLink to={`/${navItem.name}`}>
+            {navItem.name}
+            {/* {navItem.subNavItems && <Nav navItems={subNavItems} />} */}
+          </NavLink>
+        </NavItem>
       )
     })}
-  </ul>
+  </NavMenu>
 )
 // const PageNav = ({ nav }) => {
 //   const items = [...nav.navItems]
