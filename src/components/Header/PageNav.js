@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 import { media } from '../../theme/globalStyle'
 
-import { Dump, slugIt } from '../../helpers'
+import { Dump, slugIt } from '../../utils/helpers'
 
 const NavMenu = styled.ul`
   grid-area: n;
