@@ -2,7 +2,8 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 
-import PageNav from './PageNav'
+import Navigation from './Navigation'
+import NavItems from './NavItems'
 
 const HeaderWrapper = styled.div`
   grid-area: h;
@@ -37,7 +38,8 @@ const Header = props => (
     <StyledHeader>
       <BrandLink to="/">NCSC</BrandLink>
     </StyledHeader>
-    <PageNav navItems={props.navItems} />
+    <Navigation navItems={props.navItems} />
+    <NavItems navItems={props.navItems} />
   </HeaderWrapper>
 )
 
