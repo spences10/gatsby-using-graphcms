@@ -1,7 +1,7 @@
 import { injectGlobal, css } from 'styled-components'
 
 export const theme1 = {
-  primary: '#ff0198',
+  primary: '#051d49',
   secondary: '#01c1d6',
   danger: '#eb238e',
   light: '#f4f4f4',
