@@ -8,7 +8,7 @@ import { media } from '../../theme/globalStyle'
 import { Dump, slugIt } from '../../utils/helpers'
 
 const NavMenu = styled.ul`
-  grid-area: nav;
+  grid-area: ni; /* NavItem */
   display: inline-grid;
   grid-template-columns: repeat(7, auto);
   grid-column-gap: 10px;

@@ -13,7 +13,7 @@ const HeaderWrapper = styled.div`
   grid-template-rows: auto;
   grid-template-areas:
     '. brand brand brand . . . . . . . .'
-    '. nav nav nav nav nav nav nav nav nav nav .';
+    'n n n n n n n n n n n n';
 `
 
 const StyledHeader = styled.h1`
@@ -39,7 +39,7 @@ const Header = props => (
       <BrandLink to="/">NCSC</BrandLink>
     </StyledHeader>
     <Navigation navItems={props.navItems} />
-    <NavItems navItems={props.navItems} />
+    {/* <NavItems navItems={props.navItems} /> */}
   </HeaderWrapper>
 )
 
