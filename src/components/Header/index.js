@@ -1,14 +1,16 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import styled from 'styled-components'
 
 import PageNav from './PageNav'
 
+const HeaderWrapper = styled.div`
+  background: ${props => props.theme.primary};
+  margin-bottom: 1.45rem;
+`
+
 const Header = props => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem'
-    }}>
+  <HeaderWrapper>
     <div
       style={{
         margin: '0 auto',
@@ -22,12 +24,12 @@ const Header = props => (
             color: 'white',
             textDecoration: 'none'
           }}>
-          Gatsby
+          NCSC
         </Link>
-        <PageNav navItems={props.navItems} />
       </h1>
     </div>
-  </div>
+    <PageNav navItems={props.navItems} />
+  </HeaderWrapper>
 )
 
 export default Header
