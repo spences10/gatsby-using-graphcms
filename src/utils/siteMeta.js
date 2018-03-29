@@ -5,7 +5,7 @@ const keywordsContent = 'ncsc, ncsc wiki, cyber security'
 const imageLink = ''
 const siteLink = 'https://ncsc.gov'
 
-export const siteMeta = [
+const siteMeta = [
   // Google / Search Engine Tags
   {
     name: 'description',
@@ -46,3 +46,5 @@ export const siteMeta = [
     content: imageLink
   }
 ]
+
+export default siteMeta
