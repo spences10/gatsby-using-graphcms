@@ -5,7 +5,7 @@ import styled, { ThemeProvider } from 'styled-components'
 
 import Header from '../components/Header'
 import { theme1 } from '../theme/globalStyle'
-import meta from '../utils/siteMeta'
+import siteMeta from '../utils/siteMeta'
 
 const PageWrapper = styled.div``
 
@@ -19,13 +19,7 @@ const TemplateWrapper = ({ children, data }) => {
   return (
     <ThemeProvider theme={theme1}>
       <PageWrapper>
-        <Helmet
-          title="Gatsby Default Starter"
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' }
-          ]}
-        />
+        <Helmet title={siteMeta.title} meta={siteMeta} />
         <Header navItems={navItems} />
 
         <div
