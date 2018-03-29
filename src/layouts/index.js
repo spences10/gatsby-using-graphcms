@@ -4,7 +4,6 @@ import Helmet from 'react-helmet'
 import styled, { ThemeProvider } from 'styled-components'
 
 import Header from '../components/Header'
-// import './index.css'
 import { theme1 } from '../theme/globalStyle'
 
 const PageWrapper = styled.div``
