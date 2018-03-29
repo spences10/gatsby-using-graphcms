@@ -5,29 +5,34 @@ import styled from 'styled-components'
 import PageNav from './PageNav'
 
 const HeaderWrapper = styled.div`
+  grid-area: h;
   background: ${props => props.theme.primary};
   margin-bottom: 1.45rem;
+  margin: '0 auto';
+  maxwidth: 960;
+  padding: '1.45rem 1.0875rem';
+`
+
+const StyledHeader = styled.h1``
+
+const BrandLink = styled(Link)`
+  color: inherit;
+  &:visited,
+  &:active {
+    color: inherit;
+  }
+  &:hover {
+    color: ${({ theme }) => theme.secondary.red};
+  }
 `
 
 const Header = props => (
   <HeaderWrapper>
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem'
-      }}>
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none'
-          }}>
-          NCSC
-        </Link>
-      </h1>
-    </div>
+    <StyledHeader>
+      <StyledHeader style={{ margin: 0 }}>
+        <BrandLink to="/">NCSC</BrandLink>
+      </StyledHeader>
+    </StyledHeader>
     <PageNav navItems={props.navItems} />
   </HeaderWrapper>
 )
