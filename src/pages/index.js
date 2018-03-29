@@ -4,16 +4,26 @@ import styled from 'styled-components'
 
 const ComponentWrapper = styled.div`
   grid-area: m;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: '. main main main main .'; /* MAIN */
+`
+
+const PageContent = styled.div`
+  grid-area: main;
 `
 
 class IndexPage extends React.Component {
   render() {
     return (
       <ComponentWrapper>
-        <h1>Hi people</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-        <Link to="/page-2/">Go to page 2</Link>
+        <PageContent>
+          <h1>Hi people</h1>
+          <p>Welcome to your new Gatsby site.</p>
+          <p>Now go build something great.</p>
+          <Link to="/page-2/">Go to page 2</Link>
+        </PageContent>
       </ComponentWrapper>
     )
   }

@@ -8,7 +8,7 @@ import { media } from '../../theme/globalStyle'
 import { Dump, slugIt } from '../../utils/helpers'
 
 const NavMenu = styled.ul`
-  grid-area: n;
+  grid-area: nav;
   display: inline-grid;
   grid-template-columns: repeat(7, auto);
   grid-column-gap: 10px;
@@ -42,6 +42,7 @@ const NavLink = styled(Link).attrs({
   &.activeLink {
     color: ${props => props.theme.primary};
   }
+  text-decoration: none;
 `
 
 const PageNav = ({ navItems }) => (

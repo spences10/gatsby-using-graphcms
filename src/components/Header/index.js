@@ -6,14 +6,19 @@ import PageNav from './PageNav'
 
 const HeaderWrapper = styled.div`
   grid-area: h;
-  background: ${props => props.theme.primary};
-  margin-bottom: 1.45rem;
-  margin: '0 auto';
-  maxwidth: 960;
-  padding: '1.45rem 1.0875rem';
+  background: ${props => props.theme.light};
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    '. brand brand brand . . . . . . . .'
+    '. nav nav nav nav nav nav nav nav nav nav .';
 `
 
-const StyledHeader = styled.h1``
+const StyledHeader = styled.h1`
+  grid-area: brand;
+  color: ${props => props.theme.dark};
+`
 
 const BrandLink = styled(Link)`
   color: inherit;
@@ -22,16 +27,15 @@ const BrandLink = styled(Link)`
     color: inherit;
   }
   &:hover {
-    color: ${({ theme }) => theme.secondary.red};
+    color: ${({ theme }) => theme.secondary.danger};
   }
+  text-decoration: none;
 `
 
 const Header = props => (
   <HeaderWrapper>
     <StyledHeader>
-      <StyledHeader style={{ margin: 0 }}>
-        <BrandLink to="/">NCSC</BrandLink>
-      </StyledHeader>
+      <BrandLink to="/">NCSC</BrandLink>
     </StyledHeader>
     <PageNav navItems={props.navItems} />
   </HeaderWrapper>

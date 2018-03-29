@@ -13,14 +13,13 @@ const PageWrapper = styled.div`
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-    '. h h h h h h h h h h .'
-    '. . . m m m m m m . . .'
-    '. . . f f f f f f . . .';
+    'h h h h h h h h h h h h' /* HEADER */
+    'm m m m m m m m m m m m' /* MAIN */
+    'f f f f f f f f f f f f'; /* FOOTER */
 `
 
 const Main = styled.div`
   grid-area: m;
-  margin: 2.5rem 0rem 2.5rem 0rem;
 `
 
 const TemplateWrapper = ({ children, data }) => {
