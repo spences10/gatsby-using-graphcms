@@ -5,6 +5,7 @@ import styled, { ThemeProvider } from 'styled-components'
 
 import Header from '../components/Header'
 import { theme1 } from '../theme/globalStyle'
+import meta from '../utils/siteMeta'
 
 const PageWrapper = styled.div``
 
