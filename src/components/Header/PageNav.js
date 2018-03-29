@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 import { media } from '../../theme/globalStyle'
 
-import { Dump } from '../../helpers'
+import { Dump, slugIt } from '../../helpers'
 
 const NavMenu = styled.ul`
   grid-area: n;
@@ -18,9 +18,9 @@ const NavMenu = styled.ul`
 
 const NavItem = styled.li`
   transition: all 0.3s;
-  text-transform: uppercase;
+  text-transform: capitalize;
   list-style: none;
-  color: ${props => props.theme.primary};
+  color: ${props => props.theme.secondary};
   &:hover {
     letter-spacing: 0.25rem;
     transition: all 0.3s;
@@ -29,7 +29,7 @@ const NavItem = styled.li`
 `
 
 const NavLink = styled(Link).attrs({
-  color: props => props.theme.primary
+  color: props => props.theme.secondary
 })`
   color: inherit;
   &:visited,
@@ -46,40 +46,22 @@ const NavLink = styled(Link).attrs({
 
 const PageNav = ({ navItems }) => (
   <NavMenu>
-    <Dump navItems={navItems} />
     {navItems.map((item, index) => {
       const navItem = item.node || item
-      return (
-        <NavItem key={index}>
-          <NavLink to={`/${navItem.name}`}>
-            {navItem.name}
-            {/* {navItem.subNavItems && <Nav navItems={subNavItems} />} */}
-          </NavLink>
-        </NavItem>
-      )
+      const { topLevelNavItem } = item.node || item
+      if (topLevelNavItem) {
+        return (
+          <NavItem key={index}>
+            <NavLink to={`/${slugIt(navItem.name)}`}>
+              {/* <Dump navItem={navItem.subNavItems} /> */}
+              {navItem.name}
+              {navItem.subNavItems && <Nav navItems={subNavItems} />}
+            </NavLink>
+          </NavItem>
+        )
+      }
     })}
   </NavMenu>
 )
-// const PageNav = ({ nav }) => {
-//   const items = [...nav.navItems]
-//   return (
-//     <NavMenu>
-//       {console.log(items)}
-//       {Object.keys(nav.navItems).map(item => console.log(item))}
-//     </NavMenu>
-//   )
-// }
-
-// {Object.keys(nav).map((item, index) => (
-//   <NavItem key={index}>
-//     <NavLink to={`/${item}`} activeClassName="activeLink">
-//       {item}
-//     </NavLink>
-//   </NavItem>
-// ))}
-
-// PageNav.propTypes = {
-//   nav: PropTypes.array.isRequired
-// }
 
 export default PageNav
