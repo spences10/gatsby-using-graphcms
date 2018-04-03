@@ -12,20 +12,35 @@ const NavMenu = styled.ul`
   display: inline-grid;
   grid-template-columns: repeat(7, auto);
   grid-column-gap: 10px;
-  margin: 1.5rem 0.1rem 1.5rem 0.1rem;
-  padding: 1.5rem 0.1rem 1.5rem 0.1rem;
+  margin: 0rem;
+  padding: 0rem;
+  justify-self: start;
+  align-self: center;
 `
 
 const NavItem = styled.li`
   transition: all 0.3s;
   text-transform: capitalize;
   list-style: none;
-  color: ${props => props.theme.secondary};
-  &:hover {
+  color: ${props => props.theme.light};
+  :before {
+    content: ' | ';
+    padding: 0 10px;
+    color: ${props => props.theme.secondary};
+  }
+  :last-child {
+    :after {
+      content: ' | ';
+      padding: 0 10px;
+      color: ${props => props.theme.secondary};
+    }
+  }
+  /* &:hover {
     letter-spacing: 0.25rem;
     transition: all 0.3s;
-  }
-  /* padding: 0.5rem; */
+  } */
+  margin: 0rem;
+  padding: 0rem;
 `
 
 const NavLink = styled(Link).attrs({
