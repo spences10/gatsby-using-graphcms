@@ -24,13 +24,13 @@ const NavItem = styled.li`
   list-style: none;
   color: ${props => props.theme.light};
   :before {
-    content: ' | ';
+    content: '|';
     padding: 0 10px;
     color: ${props => props.theme.secondary};
   }
   :last-child {
     :after {
-      content: ' | ';
+      content: '|';
       padding: 0 10px;
       color: ${props => props.theme.secondary};
     }
