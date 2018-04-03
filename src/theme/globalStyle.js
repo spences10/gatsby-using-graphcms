@@ -3,6 +3,7 @@ import { injectGlobal, css } from 'styled-components'
 export const theme1 = {
   primary: '#051d49',
   secondary: '#01c1d6',
+  inset: '#571d50',
   danger: '#eb238e',
   light: '#f4f4f4',
   dark: '#222'
