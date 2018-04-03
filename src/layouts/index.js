@@ -4,13 +4,13 @@ import Helmet from 'react-helmet'
 import styled, { ThemeProvider } from 'styled-components'
 
 import Header from '../components/Header'
-import { theme1, media } from '../theme/globalStyle'
+import { theme1, media, columns } from '../theme/globalStyle'
 import siteMeta from '../utils/siteMeta'
 
 const PageWrapper = styled.div`
   display: grid;
   background: ${props => props.theme.light};
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(${columns.giant}, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
     'h h h h h h h h h h h h' /* HEADER */

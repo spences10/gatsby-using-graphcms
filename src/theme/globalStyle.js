@@ -32,6 +32,13 @@ injectGlobal`
   }
 `
 
+export const columns = {
+  giant: 12,
+  desktop: 10,
+  tablet: 8,
+  phone: 6
+}
+
 const sizes = {
   giant: 1170,
   desktop: 992,
