@@ -37,5 +37,19 @@ module.exports = `
         name
       }
     }
+
+    allPages {
+      id
+      headerImage {
+        id
+        fileName
+        url
+      }
+      isPublished   
+      pageName
+      pageNameSlug
+      pageTitle	    
+	  }
+
   }
 `
