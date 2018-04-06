@@ -13,7 +13,7 @@
     "gatsby-plugin-react-helmet": "2.0.10",
     "gatsby-plugin-sharp": "1.6.41",
     "gatsby-plugin-styled-components": "2.0.11",
-    "gatsby-source-filesystem": "1.5.28",
+    "gatsby-source-filesystem": "1.5.29",
     "gatsby-source-graphcms": "0.0.1",
     "gatsby-transformer-sharp": "1.6.22",
     "react-helmet": "5.2.0",
