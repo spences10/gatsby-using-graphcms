@@ -1,85 +1,55 @@
 'use strict'
 
 module.exports = `
-{
-  allAsset {
-    edges {
-      node {
-        id
-        size
-        url
-        height
-        width
-        fileName
-        mimeType
-      }
+  {
+    allAssets {
+      size
+      url
+      height
+      fileName
+      mimeType
+      id
+      width
     }
-  }
 
-  allBlogPost {
-	  edges {
-	    node {
-	      id
-        body
-        createdAt
-	    }
-	  }
-	}
-
-  allEvent {
-    edges {
-      node {
-        id
-        title
-      }
+    allBlogPosts {
+      id
+      body
+      createdAt
     }
-  }
 
-  allNavigationLink {
-    edges {
-      node {
-        id
-        name
-        topLevelNavItem
-        parentNavLink {
-          id
-          name
-        }
-        subNavLinks {
-          id
-          name
-        }
-      }
+    allEvents {
+      id
+      title
+      
     }
-  }
 
-  allPage {
-    edges {
-      node {
-        id
-        id
-        headerImage {
-          id
-          fileName
-          url
-        }
-        isPublished
-        pageName
-        pageDescription
-        pageNameSlug
-        pageTitle
-      }
-    }
-  }
-
-  query NavLinks ($topLevel: Boolean!) {
-    allNavigationLink (filter: {topLevelNavItem:$topLevel}){
+    allNavigationLinks {
+      id
       name
+      topLevelNavItem
+      parentNavLink {
+        id
+        name
+      }
       subNavLinks {
+        id
         name
       }
     }
-  }
 
-}
+    allPages {
+      id
+      headerImage {
+        id
+        fileName
+        url
+      }
+      isPublished   
+      pageName
+      pageDescription
+      pageNameSlug
+      pageTitle
+    }
+  }
 `
