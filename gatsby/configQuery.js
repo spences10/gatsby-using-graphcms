@@ -27,6 +27,10 @@ module.exports = `
     allNavigationLinks {
       id
       name
+      pageSlug {
+        id
+        pageNameSlug
+      }      
       topLevelNavItem
       parentNavLink {
         id

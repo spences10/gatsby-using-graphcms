@@ -40,6 +40,10 @@ module.exports = `
         node {
           id
           name
+          pageSlug {
+            id
+            pageNameSlug
+          }
           topLevelNavItem
           parentNavLink {
             id
