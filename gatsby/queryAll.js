@@ -2,7 +2,7 @@
 
 module.exports = `
   {
-    allAssets {
+    allAsset {
       edges {
         node {
           id
