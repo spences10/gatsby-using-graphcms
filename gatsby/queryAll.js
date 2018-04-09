@@ -39,17 +39,21 @@ module.exports = `
     }
 
     allPages {
-      id
-      headerImage {
-        id
-        fileName
-        url
+      edges {
+        node {
+          id
+          pageTitle
+          isPublished
+          pageName
+          headerImage {
+            id
+            fileName
+            url
+          }
+          pageNameSlug
+        }
       }
-      isPublished   
-      pageName
-      pageNameSlug
-      pageTitle	    
-	  }
+    }
 
   }
 `
