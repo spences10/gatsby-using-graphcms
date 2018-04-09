@@ -13,7 +13,7 @@ module.exports = {
       options: {
         endpoint: process.env.GRAPHCMS_ID,
         token: process.env.GRAPHCMS_TOKEN,
-        query: require('./gatsby/queryAll')
+        query: require('./gatsby/configQuery')
       }
     }
   ]
