@@ -19,18 +19,21 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           reject(result.errors)
         }
 
-        console.log('====================')
-        console.log(result)
-        console.log('====================')
+        // console.log('=====================')
+        // console.log(result.data.allPage.edges)
+        // console.log('=====================')
 
-        // const artists = result.data.allArtist.edges
-        // artists.forEach(node => {
-        //   const path = `artists/` + node.artist.slug
+        const pages = result.data.allPage.edges
+        pages.map(({ node: page }) => {
+          const path = `/${page.pageNameSlug}`
+        })
+        // pages.forEach(node => {
+        //   const path = `/` + node.page.slug
         //   createPage({
         //     path,
-        //     component: artistDetailPageTemplate,
+        //     component: pageDetailTemplate,
         //     context: {
-        //       slug: node.artist.slug
+        //       slug: node.page.slug
         //     }
         //   })
         // })
