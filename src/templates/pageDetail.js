@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 
 import { columns } from '../theme/globalStyle'
+import { Dump } from '../utils/helpers'
 
 const PageWrapper = styled.div`
   display: grid;
@@ -18,13 +19,15 @@ const PageContent = styled.div`
 
 class PageDetail extends React.Component {
   render() {
-    const page = this.props.data.product
+    const page = this.props.data.page
     return (
       <PageWrapper>
         <PageContent>
+          <h1 />
           <h1>{page.pageTitle}</h1>
           <div>{page.pageDescription}</div>
           <Link to="/">Go back to the homepage</Link>
+          <Dump props={page} />
         </PageContent>
       </PageWrapper>
     )
@@ -33,12 +36,31 @@ class PageDetail extends React.Component {
 
 export default PageDetail
 
-export const query = graphql`
-  query PageDetails($pageId: String!) {
-    page(id: { eq: $pageId }) {
+// export const query = graphql`
+//   query PageDetails($pageId: String!) {
+//     page(id: { eq: $pageId }) {
+//       id
+//       pageTitle
+//       pageDescription
+//     }
+//   }
+// `
+
+export const PageDetailPageQuery = graphql`
+  query getPageById($slug: String!) {
+    page(pageNameSlug: { eq: $slug }) {
       id
-      pageTitle
+      id
+      headerImage {
+        id
+        fileName
+        url
+      }
+      isPublished
+      pageName
       pageDescription
+      pageNameSlug
+      pageTitle
     }
   }
 `

@@ -1,10 +1,55 @@
+'use strict'
+
 module.exports = `
-  query NavLinks ($topLevel: Boolean!) {
-    allNavigationLink (filter: {topLevelNavItem:$topLevel}){
+  {
+    allAssets {
+      size
+      url
+      height
+      fileName
+      mimeType
+      id
+      width
+    }
+
+    allBlogPosts {
+      id
+      body
+      createdAt
+    }
+
+    allEvents {
+      id
+      title
+      
+    }
+
+    allNavigationLinks {
+      id
       name
-      subNavLinks {
+      topLevelNavItem
+      parentNavLink {
+        id
         name
       }
+      subNavLinks {
+        id
+        name
+      }
+    }
+
+    allPages {
+      id
+      headerImage {
+        id
+        fileName
+        url
+      }
+      isPublished   
+      pageName
+      pageDescription
+      pageNameSlug
+      pageTitle
     }
   }
 `
