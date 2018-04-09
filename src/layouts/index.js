@@ -54,6 +54,10 @@ export const query = graphql`
         node {
           id
           name
+          pageSlug {
+            id
+            pageNameSlug
+          }
           parentNavLink {
             id
           }
