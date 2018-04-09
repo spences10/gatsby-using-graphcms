@@ -9,11 +9,11 @@
     "gatsby-image": "1.0.42",
     "gatsby-link": "1.6.40",
     "gatsby-plugin-favicon": "2.1.1",
-    "gatsby-plugin-google-analytics": "1.0.27",
+    "gatsby-plugin-google-analytics": "1.0.28",
     "gatsby-plugin-react-helmet": "2.0.10",
     "gatsby-plugin-sharp": "1.6.41",
     "gatsby-plugin-styled-components": "2.0.11",
-    "gatsby-source-filesystem": "1.5.27",
+    "gatsby-source-filesystem": "1.5.28",
     "gatsby-source-graphcms": "0.0.1",
     "gatsby-transformer-sharp": "1.6.22",
     "react-helmet": "5.2.0",
@@ -22,8 +22,10 @@
   "keywords": ["gatsby"],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "dev": "gatsby develop",
+    "clean":
+      "rm -rf .cache/ && rm -rf gatsby-graphcms/ && rm -rf public/",
+    "build": "gatsby build && mv public gatsby-graphcms",
+    "dev": "npm run clean && gatsby develop",
     "format": "pretty-quick",
     "precommit": "pretty-quick --staged",
     "test": "echo \"Error: no test specified\" && exit 1"

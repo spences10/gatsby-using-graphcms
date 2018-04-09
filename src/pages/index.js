@@ -2,10 +2,12 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 
+import { columns } from '../theme/globalStyle'
+
 const ComponentWrapper = styled.div`
   grid-area: m;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(${columns.giant}, 1fr);
   grid-template-rows: auto;
   grid-template-areas: '. main main main main .'; /* MAIN */
 `
@@ -49,3 +51,6 @@ export const pageQuery = graphql`
     }
   }
 `
+
+// picture background colour
+// background: rgba(5,29,73,.85);
