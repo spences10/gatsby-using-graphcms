@@ -34,7 +34,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query getAllNavigationItems {
-    links: allNavigationLinks {
+    links: allNavigationLink {
       edges {
         node {
           id

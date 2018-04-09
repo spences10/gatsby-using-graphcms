@@ -23,7 +23,7 @@ const Main = styled.div`
 `
 
 const TemplateWrapper = ({ children, data }) => {
-  const { edges: navItems } = data.allNavigationLinks
+  const { edges: navItems } = data.allNavigationLink
 
   // console.log('====================')
   // console.log(navItems)
@@ -49,7 +49,7 @@ export default TemplateWrapper
 
 export const query = graphql`
   query NavItems {
-    allNavigationLinks {
+    allNavigationLink {
       edges {
         node {
           id

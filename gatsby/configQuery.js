@@ -1,6 +1,6 @@
 module.exports = `
   query NavLinks ($topLevel: Boolean!) {
-    allNavigationLinks (filter: {topLevelNavItem:$topLevel}){
+    allNavigationLink (filter: {topLevelNavItem:$topLevel}){
       name
       subNavLinks {
         name
