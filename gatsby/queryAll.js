@@ -57,7 +57,6 @@ module.exports = `
       edges {
         node {
           id
-          id
           headerImage {
             id
             fileName
