@@ -16,14 +16,29 @@ const PageContent = styled.div`
   grid-area: pc; /* Guidance Content */
 `
 
-const GuidancePage = () => (
-  <PageWrapper>
-    <PageContent>
-      <h1>Hi from the Guidance page</h1>
-      <p>Welcome to page 2</p>
-      <Link to="/">Go back to the homepage</Link>
-    </PageContent>
-  </PageWrapper>
-)
+class PageDetail extends React.Component {
+  render() {
+    const page = this.props.data.product
+    return (
+      <PageWrapper>
+        <PageContent>
+          <h1>{page.pageTitle}</h1>
+          <div>{page.pageDescription}</div>
+          <Link to="/">Go back to the homepage</Link>
+        </PageContent>
+      </PageWrapper>
+    )
+  }
+}
 
-export default GuidancePage
+export default PageDetail
+
+export const query = graphql`
+  query PageDetails($pageId: String!) {
+    page(id: { eq: $pageId }) {
+      id
+      pageTitle
+      pageDescription
+    }
+  }
+`
