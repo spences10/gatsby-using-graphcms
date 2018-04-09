@@ -66,9 +66,10 @@ const PageNav = ({ navItems }) => (
       const navItem = item.node || item
       const { topLevelNavItem } = item.node || item
       if (topLevelNavItem) {
+        const { pageNameSlug } = navItem.pageSlug
         return (
           <NavItem key={index}>
-            <NavLink to={`/${slugIt(navItem.name)}`}>
+            <NavLink to={`/${pageNameSlug}`}>
               {/* <Dump navItem={navItem.subNavItems} /> */}
               {navItem.name}
               {navItem.subNavItems && <Nav navItems={subNavItems} />}
