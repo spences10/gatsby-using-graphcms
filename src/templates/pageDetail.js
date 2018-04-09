@@ -36,16 +36,6 @@ class PageDetail extends React.Component {
 
 export default PageDetail
 
-// export const query = graphql`
-//   query PageDetails($pageId: String!) {
-//     page(id: { eq: $pageId }) {
-//       id
-//       pageTitle
-//       pageDescription
-//     }
-//   }
-// `
-
 export const PageDetailPageQuery = graphql`
   query getPageById($slug: String!) {
     page(pageNameSlug: { eq: $slug }) {
