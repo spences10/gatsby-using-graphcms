@@ -5,7 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "dotenv": "5.0.1",
-    "gatsby": "1.9.247",
+    "gatsby": "1.9.248",
     "gatsby-image": "1.0.43",
     "gatsby-link": "1.6.40",
     "gatsby-plugin-favicon": "2.1.1",
