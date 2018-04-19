@@ -17,13 +17,14 @@ const PageContent = styled.div`
   grid-area: pc; /* Guidance Content */
 `
 
+const HeaderImage = styled.img``
+
 class PageDetail extends React.Component {
   render() {
     const page = this.props.data.page
     return (
       <PageWrapper>
         <PageContent>
-          <h1 />
           <h1>{page.pageTitle}</h1>
           <div>{page.pageDescription}</div>
           <Link to="/">Go back to the homepage</Link>
