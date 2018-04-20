@@ -26,9 +26,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         const pages = result.data.allPage.edges
         pages.map(({ node: page }) => {
           const path = `/${page.pageNameSlug}`
-          console.log('=====================')
-          console.log(path)
-          console.log('=====================')
+          // console.log('=====================')
+          // console.log(path)
+          // console.log('=====================')
           createPage({
             path,
             component: pageDetailTemplate,

@@ -14,10 +14,13 @@ const PageWrapper = styled.div`
 `
 
 const PageContent = styled.div`
-  grid-area: pc; /* Guidance Content */
+  grid-area: pc; /* Page Content */
 `
 
-const HeaderImage = styled.img``
+const HeaderImage = styled.img`
+  /* border: 1px solid #000; */
+  background-image: url(${props => props.src};);
+`
 
 class PageDetail extends React.Component {
   render() {
@@ -27,8 +30,10 @@ class PageDetail extends React.Component {
         <PageContent>
           <h1>{page.pageTitle}</h1>
           <div>{page.pageDescription}</div>
-          <Link to="/">Go back to the homepage</Link>
+          {console.log(page.headerImage.url)}
+          <HeaderImage src={page.headerImage.url} />
           <Dump props={page} />
+          <Link to="/">Go back to the homepage</Link>
         </PageContent>
       </PageWrapper>
     )
@@ -40,7 +45,6 @@ export default PageDetail
 export const PageDetailPageQuery = graphql`
   query getPageById($slug: String!) {
     page(pageNameSlug: { eq: $slug }) {
-      id
       id
       headerImage {
         id
