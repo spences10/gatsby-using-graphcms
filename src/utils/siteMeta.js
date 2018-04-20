@@ -1,9 +1,8 @@
-const nameContent = 'NCSC Site'
-const descriptionContent =
-  'National Cyber Security Centre a part of GCHQ'
-const keywordsContent = 'ncsc, ncsc wiki, cyber security'
+const nameContent = 'Site Name'
+const descriptionContent = 'site description'
+const keywordsContent = 'key words, comma, separated'
 const imageLink = ''
-const siteLink = 'https://ncsc.gov'
+const siteLink = 'https://sitename.com'
 
 const siteMeta = [
   // Google / Search Engine Tags

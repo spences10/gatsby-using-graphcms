@@ -6,6 +6,7 @@ yarn-error.log
 
 # Build directory
 /public
+/gatsby-graphcms
 
 # Env
 .env
@@ -13,3 +14,4 @@ yarn-error.log
 .env.production
 
 .DS_Store
+
