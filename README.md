@@ -1,28 +1,19 @@
-# gatsby-starter-default
+# Gatsby using GraphCMS example
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/spences10/gatsby-using-graphcms.svg)](https://greenkeeper.io/)
-The default Gatsby starter.
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![styled components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
+[![Build Status](https://travis-ci.org/spences10/gatsby-using-graphcms.svg?branch=master)](https://travis-ci.org/spences10/gatsby-using-graphcms)
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
+## Intro
 
-## Install
+Example of using Gatsby for building content from GraphCMS, this
+focuses on the ability to add and remove content from the nav bar and
+build pages from the GraphCMS API
 
-Make sure that you have the Gatsby CLI program installed:
-```sh
-npm install --global gatsby-cli
-```
+## Configuration
 
-And run from your CLI:
-```sh
-gatsby new gatsby-example-site
-```
+There's a lot of configuration on the CMS side that needs to be done
+to achieved the desired result here
 
-Then you can run it by:
-```sh
-cd gatsby-example-site
-npm run develop
-```
-
-## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+###### Bootstrapped with the default Gatsby starter.
