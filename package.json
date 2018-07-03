@@ -25,13 +25,14 @@
     "eslint-plugin-react": "7.10.0",
     "husky": "0.14.3",
     "prettier": "1.13.7",
-    "pretty-quick": "1.4.1"
+    "pretty-quick": "1.6.0"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "scripts": {
-    "clean":
-      "rm -rf .cache/ && rm -rf gatsby-graphcms/ && rm -rf public/",
+    "clean": "rm -rf .cache/ && rm -rf gatsby-graphcms/ && rm -rf public/",
     "build": "gatsby build && mv public gatsby-graphcms",
     "dev": "npm run clean && gatsby develop",
     "format": "pretty-quick",
