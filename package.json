@@ -37,6 +37,6 @@
     "dev": "npm run clean && gatsby develop",
     "format": "pretty-quick",
     "precommit": "pretty-quick --staged",
-    "now-start": "npm run build"
+    "now-start": "npm run build --dotenv"
   }
 }
