@@ -1,4 +1,7 @@
 {
   "name": "gatsby-graphcms",
-  "dotenv": ".env"
+  "env": {
+    "GRAPHCMS_ID": "@graphcms-id",
+    "GRAPHCMS_TOKEN": "@graphcms-token"
+  }
 }
