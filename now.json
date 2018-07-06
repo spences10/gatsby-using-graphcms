@@ -1,3 +1,4 @@
 {
-  
+  "name": "gatsby-graphcms",
+  "dotenv": ".env"
 }
