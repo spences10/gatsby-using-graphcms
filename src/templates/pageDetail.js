@@ -28,12 +28,19 @@ class PageDetail extends React.Component {
     return (
       <PageWrapper>
         <PageContent>
-          <h1>{page.pageTitle}</h1>
-          <div>{page.pageDescription}</div>
-          {console.log(page.headerImage.url)}
-          <HeaderImage src={page.headerImage.url} />
-          <Dump props={page} />
-          <Link to="/">Go back to the homepage</Link>
+          {console.log('=====DEBUG====', page)}
+          {typeof page === 'undefined' ? (
+            ''
+          ) : (
+            <div>
+              <h1>{page.pageTitle}</h1>
+              <div>{page.pageDescription}</div>
+              {console.log(page.headerImage.url)}
+              <HeaderImage src={page.headerImage.url} />
+              <Dump props={page} />
+              <Link to="/">Go back to the homepage</Link>
+            </div>
+          )}
         </PageContent>
       </PageWrapper>
     )
