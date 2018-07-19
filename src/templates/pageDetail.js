@@ -28,6 +28,7 @@ class PageDetail extends React.Component {
     return (
       <PageWrapper>
         <PageContent>
+          {console.log('=====DEBUG====', page)}
           <h1>{page.pageTitle}</h1>
           <div>{page.pageDescription}</div>
           {console.log(page.headerImage.url)}
