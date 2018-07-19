@@ -29,7 +29,7 @@ class PageDetail extends React.Component {
       <PageWrapper>
         <PageContent>
           {console.log('=====DEBUG====', page)}
-          {page === 'undefined' ? (
+          {typeof page === 'undefined' ? (
             ''
           ) : (
             <div>
