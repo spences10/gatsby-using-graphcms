@@ -4153,9 +4153,9 @@ gatsby-source-filesystem@1.5.39:
     slash "^1.0.0"
     valid-url "^1.0.9"
 
-gatsby-source-graphcms@1.0.0-alpha.1:
-  version "1.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/gatsby-source-graphcms/-/gatsby-source-graphcms-1.0.0-alpha.1.tgz#6f7a6798eb798d301767f74de4bb3f19392a1336"
+gatsby-source-graphcms@1.0.0-alpha.2:
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/gatsby-source-graphcms/-/gatsby-source-graphcms-1.0.0-alpha.2.tgz#6fe8144bca2dd76db17a8a74835e8cc6903f20c4"
   dependencies:
     babel-runtime "^6.26.0"
     graphql-request "^1.5.1"
