@@ -1,6 +1,8 @@
-require('dotenv').config({
-  path: '.env'
-})
+if (!process.env.NOW) {
+  require('dotenv').config({
+    path: '.env.local'
+  })
+}
 
 module.exports = {
   siteMetadata: {

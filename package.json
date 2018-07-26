@@ -1,41 +1,43 @@
 {
   "name": "gatsby-using-graphcms",
   "description": "Gatsby using GraphCMS example",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "author": "Scott Spence <spences10apps@gmail.com>",
   "dependencies": {
-    "dotenv": "5.0.1",
-    "gatsby": "1.9.253",
-    "gatsby-image": "1.0.47",
-    "gatsby-link": "1.6.41",
+    "dotenv": "6.0.0",
+    "gatsby": "1.9.277",
+    "gatsby-image": "1.0.55",
+    "gatsby-link": "1.6.46",
     "gatsby-plugin-favicon": "2.1.1",
     "gatsby-plugin-google-analytics": "1.0.31",
     "gatsby-plugin-react-helmet": "2.0.11",
-    "gatsby-plugin-sharp": "1.6.43",
+    "gatsby-plugin-sharp": "1.6.48",
     "gatsby-plugin-styled-components": "2.0.11",
-    "gatsby-source-filesystem": "1.5.33",
-    "gatsby-source-graphcms": "1.0.0-alpha.1",
-    "gatsby-transformer-sharp": "1.6.23",
+    "gatsby-source-filesystem": "1.5.39",
+    "gatsby-source-graphcms": "1.0.0-alpha.2",
+    "gatsby-transformer-sharp": "1.6.27",
     "react-helmet": "5.2.0",
-    "styled-components": "3.2.6"
+    "serve": "9.2.0",
+    "styled-components": "3.3.3"
   },
   "devDependencies": {
-    "eslint": "4.19.1",
-    "eslint-plugin-graphql": "2.1.0",
-    "eslint-plugin-react": "7.7.0",
+    "eslint": "5.1.0",
+    "eslint-plugin-graphql": "2.1.1",
+    "eslint-plugin-react": "7.10.0",
     "husky": "0.14.3",
-    "prettier": "1.12.1",
-    "pretty-quick": "1.4.1"
+    "prettier": "1.13.7",
+    "pretty-quick": "1.6.0"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "scripts": {
-    "clean":
-      "rm -rf .cache/ && rm -rf gatsby-graphcms/ && rm -rf public/",
+    "clean": "rm -rf .cache/ && rm -rf gatsby-graphcms/ && rm -rf public/",
     "build": "gatsby build && mv public gatsby-graphcms",
     "dev": "npm run clean && gatsby develop",
     "format": "pretty-quick",
     "precommit": "pretty-quick --staged",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "now-start": "serve -s ./gatsby-graphcms"
   }
 }
