@@ -5,8 +5,8 @@ exports.onCreateNode = ({ node }) => {
   console.log(`onCreateNode:`, node.internal.type)
 }
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
 
   return new Promise((resolve, reject) => {
     const pageDetailTemplate = path.resolve(
