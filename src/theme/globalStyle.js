@@ -1,4 +1,4 @@
-import { injectGlobal, css } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 
 export const theme1 = {
   primary: '#051d49',
@@ -17,8 +17,7 @@ export const theme2 = {
   dark: '#222'
 }
 
-injectGlobal`
-
+export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Montserrat:400,900|Roboto');
 
   body {
