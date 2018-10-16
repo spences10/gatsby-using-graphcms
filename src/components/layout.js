@@ -1,11 +1,16 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import styled, { ThemeProvider } from 'styled-components'
 
-import Header from '../components/Header'
-import { theme1, media, columns } from '../theme/globalStyle'
+import Header from './Header'
+import {
+  theme1,
+  media,
+  columns,
+  GlobalStyle
+} from '../theme/globalStyle'
 import siteMeta from '../utils/siteMeta'
 
 const PageWrapper = styled.div`
@@ -23,7 +28,7 @@ const Main = styled.div`
   grid-area: m;
 `
 
-const TemplateWrapper = ({ children, data }) => {
+const Layout = ({ children, data }) => {
   const { edges: navItems } = data.allNavigationLink
 
   // console.log('====================')
@@ -32,42 +37,46 @@ const TemplateWrapper = ({ children, data }) => {
 
   return (
     <ThemeProvider theme={theme1}>
+      <GlobalStyle />
       <PageWrapper>
         <Helmet title={siteMeta.title} meta={siteMeta} />
         <Header navItems={navItems} />
 
-        <Main>{children()}</Main>
+        <Main>{children}</Main>
       </PageWrapper>
     </ThemeProvider>
   )
 }
 
-TemplateWrapper.propTypes = {
+Layout.propTypes = {
   children: PropTypes.func
 }
 
-export default TemplateWrapper
-
-export const query = graphql`
-  query NavItems {
-    allNavigationLink {
-      edges {
-        node {
-          id
-          name
-          pageSlug {
-            id
-            pageNameSlug
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query LayoutData {
+        allNavigationLink {
+          edges {
+            node {
+              id
+              name
+              pageSlug {
+                id
+                pageNameSlug
+              }
+              parentNavLink {
+                id
+              }
+              subNavLinks {
+                id
+              }
+              topLevelNavItem
+            }
           }
-          parentNavLink {
-            id
-          }
-          subNavLinks {
-            id
-          }
-          topLevelNavItem
         }
       }
-    }
-  }
-`
+    `}
+    render={data => <Layout data={data} {...props} />}
+  />
+)
