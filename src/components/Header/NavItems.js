@@ -1,11 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-import { media } from '../../theme/globalStyle'
+import { Dump /*, slugIt*/ } from '../../utils/helpers'
 
-import { Dump, slugIt } from '../../utils/helpers'
+// import { media } from '../../theme/globalStyle'
 
 const NavMenu = styled.ul`
   grid-area: ni; /* NavItem */
@@ -60,25 +60,29 @@ const NavLink = styled(Link).attrs({
   text-decoration: none;
 `
 
-const PageNav = ({ navItems }) => (
-  <NavMenu>
-    {navItems.map((item, index) => {
-      const navItem = item.node || item
-      const { topLevelNavItem } = item.node || item
-      if (topLevelNavItem) {
-        const { pageNameSlug } = navItem.pageSlug
-        return (
-          <NavItem key={index}>
-            <NavLink to={`/${pageNameSlug}`}>
-              {/* <Dump navItem={navItem.subNavItems} /> */}
-              {navItem.name}
-              {navItem.subNavItems && <Nav navItems={subNavItems} />}
-            </NavLink>
-          </NavItem>
-        )
-      }
-    })}
-  </NavMenu>
-)
+const PageNav = ({ navItems }) => {
+  return (
+    <NavMenu>
+      {navItems.map((item, index) => {
+        const navItem = item.node || item
+        const { topLevelNavItem } = item.node || item
+        if (topLevelNavItem) {
+          const { pageNameSlug } = navItem.pageSlug
+          return (
+            <NavItem key={index}>
+              <NavLink to={`/${pageNameSlug}`}>
+                <Dump navItem={navItem.subNavItems} />
+                {/* {navItem.name}
+                {navItem.subNavItems && (
+                  <Nav navItems={subNavItems} />
+                )} */}
+              </NavLink>
+            </NavItem>
+          )
+        }
+      })}
+    </NavMenu>
+  )
+}
 
 export default PageNav

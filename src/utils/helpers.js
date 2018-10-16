@@ -23,6 +23,7 @@ export const Dump = props => (
 
 // https://gist.github.com/spences10/27ee6e716ba31de495987bec356a2aae
 
+/* eslint-disable */
 export const slugIt = text => {
   if (!text) return
   return text
@@ -32,7 +33,7 @@ export const slugIt = text => {
     .replace(/[^\w\-]+/g, '') // Remove all non-word chars
     .replace(/\-\-+/g, '-') // Replace multiple - with single -
     .replace(/^-+/, '') // Trim - from start of text
-    .replace(/-+$/, ''); // Trim - from end of text
+    .replace(/-+$/, '') // Trim - from end of text
 }
 
 // https://github.com/mobz/lag-radar/blob/master/lag-radar.js
