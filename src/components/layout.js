@@ -5,12 +5,7 @@ import Helmet from 'react-helmet'
 import styled, { ThemeProvider } from 'styled-components'
 
 import Header from './Header'
-import {
-  theme1,
-  media,
-  columns,
-  GlobalStyle
-} from '../theme/globalStyle'
+import { theme1, columns, GlobalStyle } from '../theme/globalStyle'
 import siteMeta from '../utils/siteMeta'
 
 const PageWrapper = styled.div`
