@@ -2,6 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
+import Layout from '../components/layout'
+
 import { columns } from '../theme/globalStyle'
 
 const ComponentWrapper = styled.div`
@@ -19,13 +21,15 @@ const PageContent = styled.div`
 class IndexPage extends React.Component {
   render() {
     return (
-      <ComponentWrapper>
-        <PageContent>
-          <h1>Hi people</h1>
-          <p>Welcome to your new Gatsby site.</p>
-          <p>Now go build something great.</p>
-        </PageContent>
-      </ComponentWrapper>
+      <Layout>
+        <ComponentWrapper>
+          <PageContent>
+            <h1>Hi people</h1>
+            <p>Welcome to your new Gatsby site.</p>
+            <p>Now go build something great.</p>
+          </PageContent>
+        </ComponentWrapper>
+      </Layout>
     )
   }
 }
