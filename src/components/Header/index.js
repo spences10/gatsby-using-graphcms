@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 import Navigation from './Navigation'
-import NavItems from './NavItems'
+// import NavItems from './NavItems'
 
 const HeaderWrapper = styled.div`
   grid-area: h;

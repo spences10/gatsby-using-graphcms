@@ -23,6 +23,7 @@ export const Dump = props => (
 
 // https://gist.github.com/spences10/27ee6e716ba31de495987bec356a2aae
 
+/* eslint-disable */
 export const slugIt = text => {
   if (!text) return
   return text

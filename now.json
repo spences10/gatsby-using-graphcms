@@ -1,7 +1,0 @@
-{
-  "name": "gatsby-graphcms",
-  "env": {
-    "GRAPHCMS_ID": "@graphcms-id",
-    "GRAPHCMS_TOKEN": "@graphcms-token"
-  }
-}
