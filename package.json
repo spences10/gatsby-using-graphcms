@@ -4,27 +4,28 @@
   "version": "1.0.55",
   "author": "Scott Spence <spences10apps@gmail.com>",
   "dependencies": {
-    "babel-plugin-styled-components": "^1.8.0",
     "dotenv": "6.1.0",
-    "gatsby": "^2.0.24",
-    "gatsby-image": "2.0.14",
-    "gatsby-link": "^2.0.4",
+    "gatsby": "1.9.279",
+    "gatsby-image": "1.0.55",
+    "gatsby-link": "1.6.46",
     "gatsby-plugin-favicon": "3.1.4",
-    "gatsby-plugin-google-analytics": "2.0.6",
-    "gatsby-plugin-react-helmet": "3.0.0",
-    "gatsby-plugin-sharp": "2.0.6",
-    "gatsby-plugin-styled-components": "3.0.0",
-    "gatsby-source-filesystem": "2.0.3",
+    "gatsby-plugin-google-analytics": "1.0.31",
+    "gatsby-plugin-react-helmet": "2.0.11",
+    "gatsby-plugin-sharp": "1.6.48",
+    "gatsby-plugin-styled-components": "2.0.11",
+    "gatsby-source-filesystem": "1.5.39",
     "gatsby-source-graphcms": "1.0.0-alpha.3",
-    "gatsby-transformer-sharp": "2.1.3",
-    "react": "16.5.2",
-    "react-dom": "16.5.2",
+    "gatsby-transformer-sharp": "1.6.27",
     "react-helmet": "5.2.0",
-    "styled-components": "^4.0.0"
+    "serve": "10.1.1",
+    "styled-components": "3.4.10"
   },
   "devDependencies": {
-    "husky": "1.1.2",
-    "prettier": "1.14.3",
+    "eslint": "5.9.0",
+    "eslint-plugin-graphql": "3.0.1",
+    "eslint-plugin-react": "7.11.1",
+    "husky": "1.2.0",
+    "prettier": "1.15.2",
     "pretty-quick": "1.8.0"
   },
   "keywords": [
@@ -34,7 +35,7 @@
   "scripts": {
     "clean": "rm -rf .cache/ && rm -rf gatsby-graphcms/ && rm -rf public/",
     "build": "gatsby build && mv public gatsby-graphcms",
-    "dev": "gatsby develop --verbose",
+    "dev": "npm run clean && gatsby develop",
     "format": "pretty-quick",
     "precommit": "pretty-quick --staged",
     "now-start": "serve -s ./gatsby-graphcms"
