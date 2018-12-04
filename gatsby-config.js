@@ -4,10 +4,12 @@ if (!process.env.NOW) {
   })
 }
 
+const siteMetadata = {
+  title: 'Site Name'
+}
+
 module.exports = {
-  siteMetadata: {
-    title: 'Site Name'
-  },
+  siteMetadata: siteMetadata,
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
