@@ -1,5 +1,4 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/layout'
@@ -36,29 +35,29 @@ class IndexPage extends React.Component {
 
 export default IndexPage
 
-export const pageQuery = graphql`
-  query getAllNavigationItems {
-    links: allNavigationLink {
-      edges {
-        node {
-          id
-          name
-          pageSlug {
-            id
-            pageNameSlug
-          }
-          parentNavLink {
-            id
-          }
-          subNavLinks {
-            id
-          }
-          topLevelNavItem
-        }
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query getAllNavigationItems {
+//     links: allNavigationLink {
+//       edges {
+//         node {
+//           id
+//           name
+//           pageSlug {
+//             id
+//             pageNameSlug
+//           }
+//           parentNavLink {
+//             id
+//           }
+//           subNavLinks {
+//             id
+//           }
+//           topLevelNavItem
+//         }
+//       }
+//     }
+//   }
+// `
 
 // picture background colour
 // background: rgba(5,29,73,.85);

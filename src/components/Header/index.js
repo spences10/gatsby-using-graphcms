@@ -38,7 +38,7 @@ const Header = props => (
     <StyledHeader>
       <BrandLink to="/">Site Name</BrandLink>
     </StyledHeader>
-    <Navigation navItems={props.navItems} />
+    {/* <Navigation navItems={props.navItems} /> */}
     {/* <NavItems navItems={props.navItems} /> */}
   </HeaderWrapper>
 )
