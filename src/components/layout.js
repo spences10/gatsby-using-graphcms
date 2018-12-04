@@ -5,26 +5,58 @@ import Helmet from 'react-helmet'
 import styled, { ThemeProvider } from 'styled-components'
 
 import Header from './Header'
-import { theme1, columns, GlobalStyle } from '../theme/globalStyle'
-import siteMeta from '../utils/siteMeta'
+import { theme1, media, GlobalStyle } from '../theme/globalStyle'
 
-const PageWrapper = styled.div`
+const AppStyles = styled.div`
+  background-color: ${({ theme }) => theme.background};
+  background-image: url("${props => props.background}");
+  background-attachment: fixed;
+  font-family: ${({ theme }) => theme.fontBody};
   display: grid;
-  background: ${props => props.theme.light};
-  grid-template-columns: repeat(${columns.giant}, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-    'h h h h h h h h h h h h' /* HEADER */
-    'm m m m m m m m m m m m' /* MAIN */
-    'f f f f f f f f f f f f'; /* FOOTER */
+    'h h h h h h h h h h h h'
+    '. . . m m m m m m . . .'
+    'f f f f f f f f f f f f';
+  ${media.giant`
+    grid-template-areas:
+      'h h h h h h h h h h h h'
+      '. . m m m m m m m m . .'
+      'f f f f f f f f f f f f';
+    /* background: goldenrod; */
+  `};
+  ${media.desktop`
+    grid-template-areas:
+      'h h h h h h h h h h h h'
+      '. m m m m m m m m m m .'
+      'f f f f f f f f f f f f';
+    /* background: dodgerblue; */
+  `};
+  ${media.tablet`
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-areas:
+      'h h h h h h h h h'
+      '. m m m m m m m .'
+      'f f f f f f f f f';
+    /* background: mediumseagreen; */
+  `};
+  ${media.phone`
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-areas:
+      'h h h h h h h h h'
+      'm m m m m m m m m'
+      'f f f f f f f f f';
+    /* background: palevioletred; */
+  `};
 `
 
-const Main = styled.div`
+const Wrapper = styled.div`
   grid-area: m;
 `
 
 const Layout = ({ children, data }) => {
-  const { edges: navItems } = data.allNavigationLink
+  // const { edges: navItems } = data.allNavigationLink
 
   // console.log('====================')
   // console.log(navItems)
@@ -32,13 +64,14 @@ const Layout = ({ children, data }) => {
 
   return (
     <ThemeProvider theme={theme1}>
-      <GlobalStyle />
-      <PageWrapper>
-        <Helmet title={siteMeta.title} meta={siteMeta} />
-        <Header navItems={navItems} />
-
-        <Main>{children}</Main>
-      </PageWrapper>
+      <AppStyles>
+        <GlobalStyle />
+        <Helmet>
+          <html lang="en-GB" />
+        </Helmet>
+        <Header />
+        <Wrapper>{children}</Wrapper>
+      </AppStyles>
     </ThemeProvider>
   )
 }
@@ -51,23 +84,9 @@ export default props => (
   <StaticQuery
     query={graphql`
       query LayoutData {
-        allNavigationLink {
-          edges {
-            node {
-              id
-              name
-              pageSlug {
-                id
-                pageNameSlug
-              }
-              parentNavLink {
-                id
-              }
-              subNavLinks {
-                id
-              }
-              topLevelNavItem
-            }
+        site {
+          siteMetadata {
+            title
           }
         }
       }

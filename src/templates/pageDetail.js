@@ -29,9 +29,7 @@ class PageDetail extends React.Component {
       <PageWrapper>
         <PageContent>
           {/* {console.log('=====DEBUG====', page)} */}
-          {typeof page === 'undefined' ? (
-            ''
-          ) : (
+          {typeof page === 'undefined' ? null : (
             <div>
               <h1>{page.pageTitle}</h1>
               <div>{page.pageDescription}</div>
@@ -49,20 +47,20 @@ class PageDetail extends React.Component {
 
 export default PageDetail
 
-export const PageDetailPageQuery = graphql`
-  query getPageById($slug: String!) {
-    page(pageNameSlug: { eq: $slug }) {
-      id
-      headerImage {
-        id
-        fileName
-        url
-      }
-      isPublished
-      pageName
-      pageDescription
-      pageNameSlug
-      pageTitle
-    }
-  }
-`
+// export const PageDetailPageQuery = graphql`
+//   query getPageById($slug: String!) {
+//     page(pageNameSlug: { eq: $slug }) {
+//       id
+//       headerImage {
+//         id
+//         fileName
+//         url
+//       }
+//       isPublished
+//       pageName
+//       pageDescription
+//       pageNameSlug
+//       pageTitle
+//     }
+//   }
+// `
