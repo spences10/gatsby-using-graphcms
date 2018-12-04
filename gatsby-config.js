@@ -12,11 +12,12 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     {
-      resolve: `gatsby-source-graphcms`,
+      resolve: 'gatsby-source-graphql',
       options: {
-        endpoint: process.env.GRAPHCMS_ID,
-        token: process.env.GRAPHCMS_TOKEN,
-        query: require('./gatsby/configQuery')
+        typeName: 'GRAPHCMS',
+        fieldName: 'graphCmsData',
+        url: 'https://api.github.com/graphql',
+        url: process.env.GATSBY_SOURCE_GRAPHQL
       }
     }
   ]
