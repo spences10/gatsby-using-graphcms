@@ -1,89 +1,44 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import styled, { ThemeProvider } from 'styled-components'
+import { StaticQuery, graphql } from 'gatsby'
 
-import Header from './Header'
-import { theme1, media, GlobalStyle } from '../theme/globalStyle'
+import styled from 'styled-components'
 
-const AppStyles = styled.div`
-  background-color: ${({ theme }) => theme.background};
-  background-image: url("${props => props.background}");
-  background-attachment: fixed;
-  font-family: ${({ theme }) => theme.fontBody};
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: auto;
-  grid-template-areas:
-    'h h h h h h h h h h h h'
-    '. . . m m m m m m . . .'
-    'f f f f f f f f f f f f';
-  ${media.giant`
-    grid-template-areas:
-      'h h h h h h h h h h h h'
-      '. . m m m m m m m m . .'
-      'f f f f f f f f f f f f';
-    /* background: goldenrod; */
-  `};
-  ${media.desktop`
-    grid-template-areas:
-      'h h h h h h h h h h h h'
-      '. m m m m m m m m m m .'
-      'f f f f f f f f f f f f';
-    /* background: dodgerblue; */
-  `};
-  ${media.tablet`
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-areas:
-      'h h h h h h h h h'
-      '. m m m m m m m .'
-      'f f f f f f f f f';
-    /* background: mediumseagreen; */
-  `};
-  ${media.phone`
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-areas:
-      'h h h h h h h h h'
-      'm m m m m m m m m'
-      'f f f f f f f f f';
-    /* background: palevioletred; */
-  `};
+import Header from './header'
+import { GlobalStyle } from '../theme/globalStyle'
+
+const ContentWrapper = styled.div`
+  margin: 0 auto;
+  max-width: 960;
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 0;
 `
 
-const Wrapper = styled.div`
-  grid-area: m;
-`
-
-const Layout = ({ children, data }) => {
-  // const { edges: navItems } = data.allNavigationLink
-
-  // console.log('====================')
-  // console.log(navItems)
-  // console.log('====================')
-
-  return (
-    <ThemeProvider theme={theme1}>
-      <AppStyles>
-        <GlobalStyle />
-        <Helmet>
-          <html lang="en-GB" />
-        </Helmet>
-        <Header />
-        <Wrapper>{children}</Wrapper>
-      </AppStyles>
-    </ThemeProvider>
-  )
-}
+const Layout = ({ children, data }) => (
+  <>
+    <GlobalStyle />
+    <Helmet
+      title={data.site.siteMetadata.title}
+      meta={[
+        { name: 'description', content: 'Sample' },
+        { name: 'keywords', content: 'sample, something' }
+      ]}>
+      <html lang="en" />
+    </Helmet>
+    <Header siteTitle={data.site.siteMetadata.title} />
+    <ContentWrapper>{children}</ContentWrapper>
+  </>
+)
 
 Layout.propTypes = {
-  children: PropTypes.func
+  children: PropTypes.node.isRequired
 }
 
 export default props => (
   <StaticQuery
     query={graphql`
-      query LayoutData {
+      query SiteTitleQuery {
         site {
           siteMetadata {
             title
