@@ -1,63 +1,25 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/layout'
+import Image from '../components/image'
 
-import { columns } from '../theme/globalStyle'
-
-const ComponentWrapper = styled.div`
-  grid-area: m;
-  display: grid;
-  grid-template-columns: repeat(${columns.giant}, 1fr);
-  grid-template-rows: auto;
-  grid-template-areas: '. main main main main .'; /* MAIN */
+const ImgWrapper = styled.div`
+  max-width: 300px;
+  margin-bottom: 1.45rem;
 `
 
-const PageContent = styled.div`
-  grid-area: main;
-`
-
-class IndexPage extends React.Component {
-  render() {
-    return (
-      <Layout>
-        <ComponentWrapper>
-          <PageContent>
-            <h1>Hi people</h1>
-            <p>Welcome to your new Gatsby site.</p>
-            <p>Now go build something great.</p>
-          </PageContent>
-        </ComponentWrapper>
-      </Layout>
-    )
-  }
-}
+const IndexPage = () => (
+  <Layout>
+    <h1>Hi people</h1>
+    <p>Welcome to your new Gatsby site.</p>
+    <p>Now go build something great.</p>
+    <ImgWrapper>
+      <Image />
+    </ImgWrapper>
+    <Link to="/page-2/">Go to page 2</Link>
+  </Layout>
+)
 
 export default IndexPage
-
-// export const pageQuery = graphql`
-//   query getAllNavigationItems {
-//     links: allNavigationLink {
-//       edges {
-//         node {
-//           id
-//           name
-//           pageSlug {
-//             id
-//             pageNameSlug
-//           }
-//           parentNavLink {
-//             id
-//           }
-//           subNavLinks {
-//             id
-//           }
-//           topLevelNavItem
-//         }
-//       }
-//     }
-//   }
-// `
-
-// picture background colour
-// background: rgba(5,29,73,.85);
