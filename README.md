@@ -97,8 +97,8 @@ exports.createPages = ({ actions, graphql }) => {
         path: page.page.pageNameSlug,
         component: pageTemplate,
         context: {
-          path: page.page.pageNameSlug,
-        },
+          path: page.page.pageNameSlug
+        }
       })
     })
 
@@ -148,4 +148,3 @@ export const query = graphql`
   }
 `
 ```
-
