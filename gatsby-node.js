@@ -1,78 +1,40 @@
-// const path = require(`path`)
-// const queryAll = require(`./gatsby/queryAll.js`)
+const path = require('path')
 
-// exports.onCreateNode = ({ node }) => {
-//   console.log(`onCreateNode:`, node.internal.type)
-// }
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
+  const pageTemplate = path.resolve('src/templates/pageTemplate.js')
+  return graphql(`
+    {
+      graphCmsData {
+        navigationLinks {
+          id
+          page {
+            id
+            pageNameSlug
+            status
+            pageContent
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors)
+    }
 
-// exports.createPages = ({ actions, graphql }) => {
-//   const { createPage } = actions
+    const pages = result.data.graphCmsData.navigationLinks
 
-//   return new Promise((resolve, reject) => {
-//     const pageDetailTemplate = path.resolve(
-//       `./src/templates/pageDetail.js`
-//     )
+    // Create pages for each markdown file.
+    pages.forEach(page => {
+      createPage({
+        path: page.page.pageNameSlug,
+        component: pageTemplate,
+        context: {
+          path: page.page.pageNameSlug
+        }
+      })
+    })
 
-//     resolve(
-//       graphql(queryAll).then(result => {
-//         if (result.errors) {
-//           reject(result.errors)
-//         }
-
-//         // console.log('=====================')
-//         // console.log(result.data.allPage.edges)
-//         // console.log('=====================')
-
-//         const pages = result.data.allPage.edges
-//         pages.map(({ node: page }) => {
-//           const path = `/${page.pageNameSlug}`
-//           // console.log('=====================')
-//           // console.log(path)
-//           // console.log('=====================')
-//           createPage({
-//             path,
-//             component: pageDetailTemplate,
-//             context: {
-//               slug: page.pageNameSlug
-//             }
-//           })
-//         })
-
-//         // pages.forEach(node => {
-//         //   const path = `/` + node.page.slug
-//         //   createPage({
-//         //     path,
-//         //     component: pageDetailTemplate,
-//         //     context: {
-//         //       slug: node.page.slug
-//         //     }
-//         //   })
-//         // })
-
-//         // const records = result.data.allRecord.edges
-//         // records.forEach(node => {
-//         //   const path = `records/` + node.record.slug
-//         //   createPage({
-//         //     path,
-//         //     component: recordDetailPageTemplate,
-//         //     context: {
-//         //       slug: node.record.slug
-//         //     }
-//         //   })
-//         // })
-
-//         // const reviews = result.data.allReview.edges
-//         // reviews.forEach(node => {
-//         //   const path = `reviews/` + node.review.slug
-//         //   createPage({
-//         //     path,
-//         //     component: reviewDetailPageTemplate,
-//         //     context: {
-//         //       slug: node.review.slug
-//         //     }
-//         //   })
-//         // })
-//       })
-//     )
-//   })
-// }
+    return pages
+  })
+}
