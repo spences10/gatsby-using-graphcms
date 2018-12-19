@@ -30,7 +30,7 @@ exports.createPages = ({ actions, graphql }) => {
         path: page.page.pageNameSlug,
         component: pageTemplate,
         context: {
-          path: page.page.pageNameSlug
+          pageSlug: page.page.pageNameSlug
         }
       })
     })

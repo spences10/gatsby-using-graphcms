@@ -1,10 +1,11 @@
 {
   "name": "gatsby-using-graphcms",
   "description": "Gatsby using GraphCMS example",
-  "version": "1.0.45",
+  "version": "1.0.58",
   "author": "Scott Spence <spences10apps@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "1.9.1",
+    "dotenv": "6.2.0",
     "gatsby": "^2.0.53",
     "gatsby-image": "^2.0.20",
     "gatsby-plugin-manifest": "^2.0.9",
@@ -21,7 +22,6 @@
     "styled-components": "4.1.1"
   },
   "devDependencies": {
-    "husky": "1.2.0",
     "prettier": "1.15.3",
     "pretty-quick": "1.8.0"
   },
@@ -32,7 +32,7 @@
   "scripts": {
     "clean": "rm -rf .cache/ && rm -rf gatsby-graphcms/ && rm -rf public/",
     "build": "gatsby build && mv public gatsby-graphcms",
-    "dev": "gatsby develop --verbose",
+    "dev": "npm run clean && gatsby develop",
     "format": "pretty-quick",
     "precommit": "pretty-quick --staged",
     "now-start": "serve -s ./gatsby-graphcms"
