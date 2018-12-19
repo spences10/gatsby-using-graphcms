@@ -15,9 +15,9 @@ const Page = ({ data }) => {
 export default Page
 
 export const query = graphql`
-  query($pageSlug: String!) {
+  query($path: String!) {
     graphCmsData {
-      pages(where: { pageNameSlug: $pageSlug }) {
+      pages(where: { pageNameSlug: $path }) {
         id
         pageName
         pageDescription
