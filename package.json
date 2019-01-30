@@ -1,28 +1,28 @@
 {
   "name": "gatsby-using-graphcms",
   "description": "Gatsby using GraphCMS example",
-  "version": "1.0.84",
+  "version": "1.0.96",
   "author": "Scott Spence <spences10apps@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "1.10.0",
     "dotenv": "6.2.0",
-    "gatsby": "2.0.91",
-    "gatsby-image": "2.0.26",
-    "gatsby-plugin-manifest": "2.0.13",
-    "gatsby-plugin-offline": "2.0.21",
+    "gatsby": "2.0.106",
+    "gatsby-image": "2.0.29",
+    "gatsby-plugin-manifest": "2.0.15",
+    "gatsby-plugin-offline": "2.0.22",
     "gatsby-plugin-react-helmet": "3.0.5",
-    "gatsby-plugin-sharp": "2.0.17",
+    "gatsby-plugin-sharp": "2.0.19",
     "gatsby-plugin-styled-components": "3.0.4",
-    "gatsby-source-filesystem": "2.0.16",
+    "gatsby-source-filesystem": "2.0.18",
     "gatsby-source-graphql": "2.0.8",
-    "gatsby-transformer-sharp": "2.1.10",
+    "gatsby-transformer-sharp": "2.1.13",
     "react": "16.7.0",
     "react-dom": "16.7.0",
     "react-helmet": "5.2.0",
     "styled-components": "4.1.3"
   },
   "devDependencies": {
-    "prettier": "1.15.3",
+    "prettier": "1.16.1",
     "pretty-quick": "1.10.0"
   },
   "keywords": [
@@ -31,8 +31,9 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf .cache/ && rm -rf gatsby-graphcms/ && rm -rf public/",
-    "build": "gatsby build && mv public gatsby-graphcms",
-    "dev": "npm run clean && gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve --open --p 9000",
+    "dev": "npm run clean && gatsby develop --open",
     "format": "pretty-quick",
     "precommit": "pretty-quick --staged",
     "now-start": "serve -s ./gatsby-graphcms"
