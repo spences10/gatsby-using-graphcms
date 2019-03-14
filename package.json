@@ -1,7 +1,7 @@
 {
   "name": "gatsby-using-graphcms",
   "description": "Gatsby using GraphCMS example",
-  "version": "1.0.149",
+  "version": "1.0.150",
   "author": "Scott Spence <spences10apps@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "1.10.0",
@@ -13,7 +13,7 @@
     "gatsby-plugin-react-helmet": "3.0.9",
     "gatsby-plugin-sharp": "2.0.28",
     "gatsby-plugin-styled-components": "3.0.7",
-    "gatsby-source-filesystem": "2.0.25",
+    "gatsby-source-filesystem": "2.0.26",
     "gatsby-source-graphql": "2.0.14",
     "gatsby-transformer-sharp": "2.1.17",
     "react": "16.8.4",
