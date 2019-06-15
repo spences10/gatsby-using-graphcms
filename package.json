@@ -1,10 +1,10 @@
 {
   "name": "gatsby-using-graphcms",
   "description": "Gatsby using GraphCMS example",
-  "version": "1.0.266",
+  "version": "1.0.267",
   "author": "Scott Spence <spences10apps@gmail.com>",
   "dependencies": {
-    "babel-plugin-styled-components": "1.10.0",
+    "babel-plugin-styled-components": "1.10.1",
     "dotenv": "8.0.0",
     "gatsby": "2.9.4",
     "gatsby-image": "2.1.4",
